@@ -1,0 +1,18 @@
+{
+    "name": "webdev1404/mars",
+    "type": "project",
+    "description": "The skeleton application files for the Mars Framework.",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.3",
+        "webdev1404/mars-framework": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true        
+    }
+}
