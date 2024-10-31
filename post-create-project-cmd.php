@@ -16,3 +16,6 @@ foreach ($dirs_writeable as $dir) {
         chmod($dir, 0777);
     }
 }
+
+
+unlink(__DIR__ . '/post-create-project-cmd.php');
