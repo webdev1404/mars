@@ -28,8 +28,8 @@ return [
 
 
     //Themes and Language Options
-    'language' => '',                   //The default language
-    'theme' => '',                      //The default theme
+    'language' => 'english',            //The default language
+    'theme' => 'my-theme',              //The default theme
 
 
     //Memcache Options
