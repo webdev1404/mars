@@ -1,0 +1,4 @@
+{{! $this.outputFooter() !}}
+</body>
+
+</html>
