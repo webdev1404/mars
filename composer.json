@@ -10,7 +10,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/"
-        }
+        },
+        "files": [
+            "vendor/webdev1404/mars/autoload/extensions.php"
+        ]
     },
     "config": {
         "optimize-autoloader": true        
