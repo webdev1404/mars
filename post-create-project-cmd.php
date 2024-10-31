@@ -1,5 +1,6 @@
 <?php
 
+//set 0777 permissions to the listed folders
 $dirs_writeable = [
     'log',
     'tmp',
@@ -18,4 +19,21 @@ foreach ($dirs_writeable as $dir) {
 }
 
 
+//remove .gitignore files
+$delete_files = [
+    'extensions/modules/.gitignore',
+    'libraries/css/.gitignore',
+    'libraries/javascript/.gitignore',
+];
+
+foreach ($delete_files as $file) {
+    $file = __DIR__ . '/' . $file;
+
+    if (is_file($file)) {
+        unlink($file);
+    }
+}
+
+
+//remove this file
 unlink(__DIR__ . '/post-create-project-cmd.php');
