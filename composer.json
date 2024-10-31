@@ -14,5 +14,8 @@
     },
     "config": {
         "optimize-autoloader": true        
+    },
+    "scripts": {
+        "@php post-create-project-cmd.php"
     }
 }
