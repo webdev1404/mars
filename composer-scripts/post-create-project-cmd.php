@@ -1,4 +1,5 @@
 <?php
+$base_dir = dirname(__DIR__);
 
 //set 0777 permissions to the listed folders
 $dirs_writeable = [
@@ -11,7 +12,7 @@ $dirs_writeable = [
 ];
 
 foreach ($dirs_writeable as $dir) {
-    $dir = __DIR__ . '/' . $dir;
+    $dir = $base_dir . '/' . $dir;
 
     if (is_dir($dir)) {
         chmod($dir, 0777);
@@ -27,7 +28,7 @@ $delete_files = [
 ];
 
 foreach ($delete_files as $file) {
-    $file = __DIR__ . '/' . $file;
+    $file = $base_dir . '/' . $file;
 
     if (is_file($file)) {
         unlink($file);
@@ -36,4 +37,6 @@ foreach ($delete_files as $file) {
 
 
 //remove this file
-unlink(__DIR__ . '/post-create-project-cmd.php');
+unlink(__FILE__);
+
+rmdir(__DIR__);

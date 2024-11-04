@@ -17,7 +17,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php post-create-project-cmd.php"
+            "@php composer-scripts/post-create-project-cmd.php"
         ]
     }
 }
