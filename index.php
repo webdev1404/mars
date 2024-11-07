@@ -13,7 +13,7 @@ try {
     $router->execute();
     $app->end();
 
-} catch (\Exception | Exception $e) {
+} catch (\Error | \Exception | Exception $e) {
     $app->log->exception($e);
 
     $app->fatalError($e->getMessage());

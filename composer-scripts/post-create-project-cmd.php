@@ -39,4 +39,11 @@ foreach ($delete_files as $file) {
 //remove this file
 unlink(__FILE__);
 
-rmdir(__DIR__);
+
+if (is_empty_dir(__DIR__)) {
+    rmdir(__DIR__);
+}
+
+function is_empty_dir($dir) {
+    return (($files = @scandir($dir)) && count($files) <= 2);
+}
