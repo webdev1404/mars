@@ -4,7 +4,7 @@
     "description": "The skeleton application files for the Mars Framework.",
     "license": "MIT",
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.4",
         "webdev1404/mars-framework": "dev-master"
     },
     "autoload": {
