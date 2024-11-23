@@ -44,6 +44,7 @@ if (is_empty_dir(__DIR__)) {
     rmdir(__DIR__);
 }
 
-function is_empty_dir($dir) {
+function is_empty_dir($dir)
+{
     return (($files = @scandir($dir)) && count($files) <= 2);
 }
