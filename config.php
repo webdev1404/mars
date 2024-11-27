@@ -29,13 +29,6 @@ return [
     'theme' => 'my-theme',              //The default theme
 
 
-    //Memcache Options
-    'memcache_enable' => false,         //If true will enable the memory cache functionality
-    'memcache_driver' => 'memcached',   //The driver used for memcache. Supported options: memcache, memcached, redis
-    'memcache_host' => '127.0.0.1',     //The memcache host
-    'memcache_port' => '11211',         //The memcache host
-
-
     //Database Options
     /*
         Multiple DB servers can be used for read & write queries.
@@ -52,8 +45,19 @@ return [
     'db_charset' => 'utf8mb4',          //The db charset
     'db_debug' => false,                //Set to true to enable the db debug data
 
+    
+    //Memcache Options
+    'memcache_enable' => false,         //If true will enable the memory cache functionality
+    'memcache_driver' => 'memcached',   //The driver used for memcache. Supported options: memcache, memcached, redis
+    'memcache_host' => '127.0.0.1',     //The memcache host
+    'memcache_port' => '11211',         //The memcache host port
 
-    //Content Cachng
+
+    //Caching
+    'cache_driver' => 'file',           //The driver used for caching. Supported options: file, memcache
+
+
+    //Page Caching
     'cache_page_enable' => false,       //If true, will enable the content cache functionality
     'cache_page_driver' => 'file',      //The driver used for content caching. Supported options:file, memcache
     'cache_page_expire_hours' => 24,    //The value - in hours - of the Expires header

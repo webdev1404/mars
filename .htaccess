@@ -4,6 +4,7 @@ RewriteEngine On
 RewriteRule ^log/ - [F,L]
 RewriteRule ^tmp/ - [F,L]
 RewriteRule ^vendor/ - [F,L]
+RewriteRule ^cache/data/ - [F,L]
 RewriteRule ^cache/pages/ - [F,L]
 RewriteRule ^cache/templates/ - [F,L]
 

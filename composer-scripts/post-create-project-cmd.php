@@ -7,6 +7,7 @@ $dirs_writeable = [
     'tmp',
     'cache/css',
     'cache/js',
+    'cache/data',
     'cache/pages',
     'cache/templates',
 ];
