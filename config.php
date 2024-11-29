@@ -8,7 +8,9 @@ return [
 
 
     //Debug Options
-    'debug' => false,                   //Set to true to enable debug mode
+    'debug' => false,                   //Set to true to enable debug mode    
+    'debug_db' => false,                //Set to true to enable the db debug data
+    'debug_plugins' => false,           //Set to true to enable the plugins debug data
     'debug_ips' => [],                  //If specified, will enable debug only for the listed IPs. Works only if debug is false
 
 
@@ -32,10 +34,10 @@ return [
     //Database Options
     /*
         Multiple DB servers can be used for read & write queries.
-        To use multiple servers, db_hostname, db_port, db_username, db_password, db_database and db_persistent must be arrays.
+        To use multiple servers, db_hostname, db_port, db_username, db_password, db_name and db_persistent must be arrays.
         The first value in the arrays will be the write server; the read server is randomly chosen
     */
-    'db_driver' => 'pdo',               //The db driver. Supported drivers: pdo
+    'db_driver' => 'mysql',             //The db driver. Supported drivers: mysql
     'db_hostname' => 'localhost',       //The db hostname
     'db_port' => '3306',                //The db port
     'db_username' => '',                //The db username
@@ -43,7 +45,6 @@ return [
     'db_name' => '',                    //The db name
     'db_persistent' => false,           // If true, the db connection will be persistent. Change it only if you know what you're doing
     'db_charset' => 'utf8mb4',          //The db charset
-    'db_debug' => false,                //Set to true to enable the db debug data
 
     
     //Memcache Options
