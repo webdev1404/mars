@@ -92,13 +92,18 @@ return [
 
     //Drivers Options - list of additional drivers to register in the format name => class
     'drivers' => [
-        'memcache' => [],
-        'cachable' => [],
+        'drivers' => [        
         'accelerators' => [],
+        'cachable' => [],
+        'captcha' => [],        
         'db' => [],
-        'mail' => [],
-        'session' => [],
         'device' => [],
-        'response' => []
+        'images' => [],
+        'mail' => [],
+        'memcache' => [],
+        'response' => [],
+        'serializer' => [],
+        'session' => [],
+        'templates' => []
     ]
 ];
