@@ -77,8 +77,37 @@ return [
     'mail_smtp_secure' => '',           //tls/ssl
 
 
-    //Performance Options
-    'http2_push' => false,
+    //Custom Headers
+    'headers' => [                      //Custom headers to be sent with the response
+        'X-Content-Type-Options' => 'nosniff',
+        'X-Frame-Options' => 'SAMEORIGIN',
+        'Referrer-Policy' => 'no-referrer-when-downgrade',
+        //'Strict-Transport-Security' => 'max-age=31536000; includeSubDomains; preload',
+    ],
+    'headers_early_hints' => [          //The early hints headers
+        'preload' => [
+            'style' => [                //The styles to be sent as early hints  
+            ],
+            'script' => [               //The scripts to be sent as early hints
+            ],
+            'font' => [                 //The fonts to be sent as early hints    
+            ],
+            'image' => [                //The images to be sent as early hints
+            ]
+        ],               
+        'preconnect' => [               //The preconnect urls to be sent with the response
+        ]              
+    ],
+
+
+    //Preload & Preconnect Options
+    'preload' => [
+        'css' => [],                    //The css urls to preload
+        'javascript' => [],             //The javascript urls to preload
+        'fonts' => [],                  //The fonts urls to preload
+        'images' => []                  //The images urls to preload
+    ],                    
+    'preconnect' => [],                 //The urls to preconnect
 
 
     //Proxy Options
