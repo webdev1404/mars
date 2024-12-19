@@ -84,6 +84,18 @@ return [
         'Referrer-Policy' => 'no-referrer-when-downgrade',
         //'Strict-Transport-Security' => 'max-age=31536000; includeSubDomains; preload',
     ],
+
+    'headers_csp_enable' => false, 		//If true, will enable the Content Security Policy header
+	'headers_csp_use_nonce' => false, 	//If true, will use a nonce for the Content Security Policy header
+    'headers_cs' => [                   //The Content Security Policy header. If specified, will override the default values
+        'default-src' => "",
+        'script-src' => "",
+        'style-src' => "",
+        'font-src' => "",
+        'img-src' => "",
+    ],
+    
+    'headers_early_hints_enable' => false, //If true, will enable the early hints functionality
     'headers_early_hints' => [          //The early hints headers
         'preload' => [
             'style' => [                //The styles to be sent as early hints  
