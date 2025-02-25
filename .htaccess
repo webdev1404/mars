@@ -1,6 +1,7 @@
 RewriteEngine On
 
 # Block access to directories
+RewriteRule ^config/ - [F,L]
 RewriteRule ^log/ - [F,L]
 RewriteRule ^tmp/ - [F,L]
 RewriteRule ^vendor/ - [F,L]
