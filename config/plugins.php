@@ -1,7 +1,6 @@
 <?php
-//Plugins Config Options
+//List of plugins to load
 
 return [
-    'enable' => true,       //Set to false to disable the plugins,
-	'list' => [],           //The list of plugins to load
+
 ];
