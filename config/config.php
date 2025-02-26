@@ -94,8 +94,8 @@ return [
 
 
     //Content Security Policy Options
-    'csp_enable' => false, 		        //If true, will enable the Content Security Policy header
-    'csp_use_nonce' => false, 	        //If true, will use a nonce for the Content Security Policy header
+    'csp_enable' => false,              //If true, will enable the Content Security Policy header
+    'csp_use_nonce' => false,           //If true, will use a nonce for the Content Security Policy header
     'csp_list' => [                     //The Content Security Policy header. If specified, will override the default values
         'default-src' => "",
         'script-src' => "",
