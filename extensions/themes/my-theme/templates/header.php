@@ -1,8 +1,8 @@
 <!doctype html>
-<html lang="{{! $this.outputLangCode() !}}">
+<html lang="{! $theme.outputLangCode() !}">
 <head>
-{{! $this.outputHead() !}}
+{! $theme.outputHead() !}
 </head>
 
 <body>
-	{{! $this.outputAlerts() !}}
+	{! $theme.outputAlerts() !}

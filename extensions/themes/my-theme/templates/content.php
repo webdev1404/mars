@@ -1,2 +1,2 @@
-{{! $this.outputContent() !}}
+{! $theme.outputContent() !}
 

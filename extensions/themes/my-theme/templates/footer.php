@@ -1,4 +1,4 @@
-{{! $this.outputFooter() !}}
+{! $theme.outputFooter() !}
 </body>
 
 </html>

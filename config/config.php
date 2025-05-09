@@ -24,7 +24,7 @@ return [
 
 
     //Development Options
-    'development' => false,              //Set to true to enable development mode
+    'development' => true,                //Set to true to enable development mode
     'development_display_errors' => 1,    //Set to 1 to display errors, 0 to hide them, if development mode is enabled
     'development_display_error_reporting' => E_ALL, //The error level to display, if development mode is enabled
     'development_device' => '',         //Will use this value as device, if specified. Valid values: 'desktop', 'tablet', 'smartphone'
