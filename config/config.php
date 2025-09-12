@@ -2,15 +2,25 @@
 
 return [
     //Site Options
-    'key' => '',                        //The secret key of the site
     'url' => '',                        //The url of the site
-    'url_static' => '',                 //The base url from where the static resources will be served
+    'url_cdn' => '',                    //CDN url for static resources. If empty, the static resources will be served from the same domain
+
+    'site_name' => '',                   //The name of the site
+    'site_slogan' => '',                 //The slogan of the site
 
 
-    //Themes and Language Options
+    //Themes Options
+    'theme' => 'mars',                  //The default theme
+
+
+    //Language Options
     'language' => 'english',            //The default language
-    'theme' => 'my-theme',              //The default theme
+    'language_fallback' => 'english',   //The fallback language for modules
 
+
+    //Plugins Options
+    'plugins_enable' => true,           //Set to false to disable the plugins,
+ 
 
     //Timezone Options
     'timezone' => 'UTC',                //The default timezone
@@ -19,19 +29,21 @@ return [
     //Debug Options
     'debug' => false,                   //Set to true to enable debug mode    
     'debug_db' => false,                //Set to true to enable the db debug data
-    'debug_plugins' => false,           //Set to true to enable the plugins debug data
     'debug_ips' => [],                  //If specified, will enable debug only for the listed IPs. Works only if debug is false
 
 
     //Development Options
-    'development' => true,                //Set to true to enable development mode
-    'development_display_errors' => 1,    //Set to 1 to display errors, 0 to hide them, if development mode is enabled
+    'development' => false,              //Set to true to enable development mode
+    'development_extensions' => [        //Runs only the specified extensions in development mode, even if the development mode is not enabled
+        'languages' => false,            //Set to true to run the languages extension in development mode
+        'themes' => false,               //Set to true to run the themes extension in development mode
+        'plugins' => false,              //Set to true to run the plugins extension in development mode
+        'modules' => false,              //Set to true to run the modules extension in development mode
+    ],
+    'development_display_errors' => 1,   //Set to 1 to display errors, 0 to hide them, if development mode is enabled
     'development_display_error_reporting' => E_ALL, //The error level to display, if development mode is enabled
-    'development_device' => '',         //Will use this value as device, if specified. Valid values: 'desktop', 'tablet', 'smartphone'
-
-
-    //Plugins Options
-    'plugins_enable' => true,           //Set to false to disable the plugins,
+    'development_device' => '',          //Will use this value as device, if specified. Valid values: 'desktop', 'tablet', 'smartphone'
+    'development_routes' => false,       //If true, will reload the routes on each request
 
 
     //Security Options
@@ -57,6 +69,7 @@ return [
     
     //Memcache Options
     'memcache_enable' => false,         //If true will enable the memory cache functionality
+    'memcache_key' => '',               //The key used for memcache. Must be specific to the project
     'memcache_driver' => 'memcached',   //The driver used for memcache. Supported options: memcache, memcached, redis
     'memcache_host' => '127.0.0.1',     //The memcache host
     'memcache_port' => '11211',         //The memcache host port
@@ -125,12 +138,17 @@ return [
 
     //Preload & Preconnect Options
     'preload' => [
-        'css' => [],                    //The css urls to preload
-        'javascript' => [],             //The javascript urls to preload
-        'fonts' => [],                  //The fonts urls to preload
-        'images' => []                  //The images urls to preload
-    ],                    
-    'preconnect' => [],                 //The urls to preconnect
+        'css' => [                      //The css urls to preload
+        ],
+        'javascript' => [               //The javascript urls to preload
+        ],
+        'fonts' => [                     //The fonts urls to preload
+        ],
+        'images' => [                    //The images urls to preload
+        ]
+    ],
+    'preconnect' => [                    //The urls to preconnect
+    ],
 
 
     //Cookies Options
@@ -154,6 +172,12 @@ return [
     'session_cookie_samesite' => null,  //The SameSite attribute of the session cookie. Supported options: Lax, Strict, None
 
 
+    //Crypt Options
+    'crypt_driver' => 'sodium',        //The crypt driver. Supported options: openssl, sodium
+    'crypt_keys' => [                   //The secret keys used for encryption. The key in use is the last one in the list. Indexes must be strings. For sodium the key must be 32 chars long
+    ],
+
+
     //HTTP Accelerators Options
     'accelerator_enable' => false,      //If true, will enable the accelerators functionality
     'accelerator_driver' => 'varnish',  //The accelerator driver. Supported options: varnish
@@ -165,6 +189,7 @@ return [
         'accelerators' => [],
         'cachable' => [],
         'captcha' => [],
+        'crypt' => [],
         'db' => [],
         'device' => [],
         'images' => [],

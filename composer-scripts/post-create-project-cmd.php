@@ -3,13 +3,16 @@ $base_dir = dirname(__DIR__);
 
 //set 0777 permissions to the listed folders
 $dirs_writeable = [
-    'log',
-    'tmp',
-    'cache/css',
-    'cache/js',
-    'cache/data',
-    'cache/pages',
-    'cache/templates',
+    'data',
+    'data/log',
+    'data/tmp',
+    'data/cache',
+    'data/cache/css',
+    'data/cache/js',
+    'data/cache/data',
+    'data/cache/pages',
+    'data/cache/routes',
+    'data/cache/templates',
 ];
 
 foreach ($dirs_writeable as $dir) {
@@ -19,23 +22,6 @@ foreach ($dirs_writeable as $dir) {
         chmod($dir, 0777);
     }
 }
-
-
-//remove .gitignore files
-$delete_files = [
-    'extensions/modules/.gitignore',
-    'libraries/css/.gitignore',
-    'libraries/javascript/.gitignore',
-];
-
-foreach ($delete_files as $file) {
-    $file = $base_dir . '/' . $file;
-
-    if (is_file($file)) {
-        unlink($file);
-    }
-}
-
 
 //remove this file
 unlink(__FILE__);
