@@ -47,7 +47,7 @@ return [
 
 
     //Security Options
-    'open_basedir' => true,             //If true, will set the open_basedir to the base path. If false, will disable it. If string, will set it to the specified value
+    'open_basedir' => true,             //If the value is true the installation dir is used as the basedir. If array, will use the specified paths. If string, will use the specified path. If false, no limitation is applied
     'trusted_proxies' => [],            //The trusted proxies from which we'll accept the HTTP_X_FORWARDED_FOR header
 
 

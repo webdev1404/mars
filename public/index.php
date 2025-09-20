@@ -1,7 +1,6 @@
 <?php
 namespace Mars;
 
-//the path where the application is located
 $base_path = dirname(__DIR__);
 
 require($base_path . '/vendor/autoload.php');
