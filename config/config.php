@@ -384,6 +384,28 @@ return [
     // The secret keys used for encryption. The key in use is the last one in the list. Indexes must be strings. For sodium the key must be 32 chars long
     'crypt_keys' => [],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Captcha Options
+    |--------------------------------------------------------------------------
+    */
+    // If true, will enable the captcha functionality
+    'captcha_enable' => false,
+
+    // The captcha driver. Supported options: recaptcha2, recaptcha3
+    'captcha_driver' => 'recaptcha3',
+
+    // The recaptcha site key
+    'captcha_recaptcha_site_key' => '',
+
+    // The recaptcha secret key
+    'captcha_recaptcha_secret_key' => '',
+
+    // The minimum score required to consider the captcha valid (recaptcha3 only)
+    'captcha_recaptcha_min_score' => 0.5,
+
+
     /*
     |--------------------------------------------------------------------------
     | HTTP Accelerators Options
