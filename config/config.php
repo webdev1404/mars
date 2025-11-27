@@ -21,6 +21,9 @@ return [
     // The slogan of the site
     'site_slogan' => '',
 
+    // The site emails
+    'site_emails' => [],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +36,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Language Options
+    | Language & Localization Options
     |--------------------------------------------------------------------------
     */
     // The default language
@@ -41,6 +44,17 @@ return [
 
     // The fallback language for modules
     'language_fallback' => 'english',
+
+    // The language codes mapping. Format: code => name
+    'language_codes' => [
+        'en' => 'english'
+    ],
+
+    // The localization driver. Supported drivers: cookie, domain, path
+    'localization_driver' => 'path',
+
+    // The enabled localization_ urls, in the format code => url. Eg: 'en' => 'https://en.mysite.com' or 'en' => 'https://mysite.en'
+    'localization_urls' => [],
 
 
     /*
@@ -66,6 +80,13 @@ return [
     | Debug Options
     |--------------------------------------------------------------------------
     */
+
+    //Set to 1 to display errors, 0 to hide them
+    'display_errors' => 0,
+
+    //The error level to display
+    'error_reporting' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
+
     // Set to true to enable debug mode
     'debug' => false,
 
@@ -181,8 +202,8 @@ return [
     | Caching
     |--------------------------------------------------------------------------
     */
-    // The driver used for caching. Supported options: file, memcache. If memcache is used, memcache_enable must be true
-    'cache_driver' => 'file',
+    // The driver used for caching. Supported options: file, php, memcache. If memcache is used, memcache_enable must be true
+    'cache_driver' => 'php',
 
 
     /*
@@ -193,7 +214,7 @@ return [
     // If true, will enable the page cache functionality
     'cache_page_enable' => false,
 
-    // The driver used for page caching. Supported options:file, memcache
+    // The driver used for page caching. Supported options: file, memcache
     'cache_page_driver' => 'file',
 
     // The value - in hours - of the Expires header
@@ -387,6 +408,15 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Serializer Options
+    |--------------------------------------------------------------------------
+    */
+    // The serializer driver. Supported options: php, json, igbinary
+    'serializer_driver' => 'php',
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Captcha Options
     |--------------------------------------------------------------------------
     */
@@ -434,6 +464,7 @@ return [
         'db' => [],
         'device' => [],
         'images' => [],
+        'localization' => [],
         'mail' => [],
         'memcache' => [],
         'response' => [],

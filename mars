@@ -5,7 +5,6 @@ namespace Mars\Bin;
 use Mars\App;
 
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/vendor/webdev1404/mars-bin/functions.php';
 
 $app = App::obj();
 if (!$app->is_cli) {
@@ -13,16 +12,13 @@ if (!$app->is_cli) {
 }
 
 try {
-    $action = get_action();
-    $command = get_command();
-
-    $available_actions = get_available_actions();
-    if (!isset($available_actions[$action])) {
-        throw new \Exception("Action {$action} not found");
+    $app->bin = new Bin($app);
+    if (!$app->bin->exists()) {
+        throw new \Exception("Action {$app->bin->action} not found");
     }
 
-    $obj = $available_actions[$action];
-    $obj->execute($command);
+    $obj = $app->bin->get();
+    $obj->execute($app->bin->command);
 } catch (\Exception $e) {
     $app->cli->error("Error: " . $e->getMessage());
 }
