@@ -1,6 +1,7 @@
 <?php
 namespace Mars;
 
+//the path where the application is located
 $base_path = dirname(__DIR__);
 
 require($base_path . '/vendor/autoload.php');
@@ -17,11 +18,11 @@ try {
 } catch (\Error | \Exception | Exception $e) {
     $app->log->exception($e);
 
-    //throw the exception if in development mode. If not, show a fatal error screen
+    //throw the exception, if in development mode. If not, show a fatal error screen
     if ($app->config->development) {
         throw $e;
     } else {
-        $error = $app->config->debug ? $e->getMessage() : App::__('error.fatal_error');
+        $error = $app->config->debug ? $e->getMessage() : App::__('error.fatal.error');
 
         $app->fatalError($error);
     }
