@@ -33,10 +33,10 @@ return [
     | Errors Options
     |--------------------------------------------------------------------------
     */
-    //bool Set to true to display errors, false to hide them
+    // bool Set to true to display errors, false to hide them
     'errors.display' => false,
 
-    //int The error level to display
+    // int The error level to display
     'errors.reporting' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
 
 
@@ -68,7 +68,7 @@ return [
     // string The localization driver. Supported drivers: cookie, domain, path
     'localization.driver' => 'path',
 
-    // array The enabled localization_ urls, in the format code => url. Eg: 'en' => 'https://en.mysite.com' or 'en' => 'https://mysite.en'
+    // array The enabled localization_urls, in the format code => url. Eg: 'en' => 'https://en.mysite.com' or 'en' => 'https://mysite.en'
     'localization.urls' => [],
 
 
@@ -220,7 +220,7 @@ return [
     'mail.smtp.host' => '',
 
     // string The smtp port
-    'mail.smtp.port'=> '',
+    'mail.smtp.port' => '',
 
     // string The smtp username
     'mail.smtp.username' => '',
@@ -240,7 +240,7 @@ return [
     // bool If the value is true the installation dir is used as the basedir. If array, will use the specified paths. If string, will use the specified path. If false, no limitation is applied
     'security.open_basedir' => true,
 
-    // bool The trusted proxies from which we'll accept the HTTP_X_FORWARDED_FOR header
+    // array The trusted proxies from which we'll accept the HTTP_X_FORWARDED_FOR header
     'security.trusted_proxies' => [],
 
 
@@ -290,8 +290,11 @@ return [
         'images' => []
     ],
 
-    // array The urls to preconnect
-    'hints.preconnect' => [],
+    // array The urls to preconnect without the crossorigin attribute
+    'hints.preconnect.non_cors' => [],
+
+    // array The urls to preconnect using the crossorigin attribute
+    'hints.preconnect.cors' => [],
 
     // bool If true, will enable the Early Hints functionality
     'hints.early_hints.enable' => false,
@@ -328,7 +331,7 @@ return [
     'cookie.domain' => '',
 
     // bool If true the cookie will only be sent over secure connections
-    'cookie.secure' => false,
+    'cookie.secure' => true,
 
     // bool If true, the cookie will be accessible only through the HTTP protocol.
     'cookie.httponly' => true,
@@ -367,7 +370,7 @@ return [
     'session.cookie.domain' => null,
 
     // bool|null If true the session cookie will only be sent over secure connections.
-    'session.cookie.secure' => null,
+    'session.cookie.secure' => true,
 
     // bool|null If true, the session cookie will be accessible only through the HTTP protocol
     'session.cookie.httponly' => true,
@@ -438,7 +441,7 @@ return [
     */
     'drivers' => [
         'accelerators' => [],
-        'cachable' => [],
+        'cacheable' => [],
         'captcha' => [],
         'crypt' => [],
         'db' => [],
