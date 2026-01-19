@@ -30,6 +30,27 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Document Options
+    |--------------------------------------------------------------------------
+    */
+    // string The prefix of the <title> tag
+    'document.title.prefix' => '',
+
+    // string The suffix of the <title> tag
+    'document.title.suffix' => '',
+
+    // string The separator of the title parts
+    'document.title.separator' => ' - ',
+
+    // string The version of the css files
+    'document.css.version' => '1.0.0',
+
+    // string The version of the javascript files
+    'document.js.version' => '1.0.0',
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Errors Options
     |--------------------------------------------------------------------------
     */
@@ -114,6 +135,10 @@ return [
         'plugins' => false,
         // Set to true to run the modules extension in development mode
         'modules' => false,
+        // Set to true to run the css libraries extension in development mode
+        'libraries.css' => false,
+        // Set to true to run the javascript libraries extension in development mode
+        'libraries.js' => false,
     ],
 
     // string Will use this value as device, if specified. Valid values: 'desktop', 'tablet', 'smartphone'
@@ -184,13 +209,16 @@ return [
     |--------------------------------------------------------------------------
     */
     // string The driver used for caching. Supported options: file, php, memcache. If memcache is used, memcache.enable must be true
-    'cache.driver' => 'php',
+    'cache.driver' => 'file',
+
+    // string|null The driver used for storage caching. Supported options: file, memcache. If null, will use cache.driver
+    'cache.storage.driver' => null,
 
     // bool If true, will enable the page cache functionality
     'cache.page.enable' => false,
 
-    // string The driver used for page caching. Supported options: file, memcache
-    'cache.page.driver' => 'file',
+    // string The driver used for page caching. Supported options: file, memcache. If null, will use cache.driver
+    'cache.page.driver' => null,
 
     // int The value - in hours - of the Expires header
     'cache.page.expire_hours' => 24,
@@ -283,7 +311,7 @@ return [
         // The css urls to preload
         'css' => [],
         // The javascript urls to preload
-        'javascript' => [],
+        'js' => [],
         // The fonts urls to preload
         'fonts' => [],
         // The images urls to preload
@@ -364,7 +392,7 @@ return [
     'session.cookie.lifetime' => null,
 
     // string|null The path of the session cookie
-    'session.cookie.path' => null,
+    'session.cookie.path' => '/',
 
     // string|null The domain of the session cookie
     'session.cookie.domain' => null,
@@ -385,7 +413,7 @@ return [
     |--------------------------------------------------------------------------
     */
     // string The crypt driver. Supported options: openssl, sodium
-    'crypt.driver' => 'sodium',
+    'crypt.driver' => 'openssl',
 
     // array The secret keys used for encryption. The key in use is the last one in the list. Indexes must be strings. For sodium the key must be 32 chars long
     'crypt.keys' => [],
@@ -398,6 +426,21 @@ return [
     */
     // string The serializer driver. Supported options: php, json, igbinary
     'serializer.driver' => 'php',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Throttle Options
+    |--------------------------------------------------------------------------
+    */
+    // bool If true, will enable the throttle functionality
+    'throttle.enable' => true,
+
+    // int The max number of attempts allowed within the block duration
+    'throttle.max_attempts' => 10,
+
+    // int The duration, in seconds, for which the key will be blocked after reaching the max attempts
+    'throttle.block_duration' => 3600,
 
 
     /*
