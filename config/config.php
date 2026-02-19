@@ -42,12 +42,6 @@ return [
     // string The separator of the title parts
     'document.title.separator' => ' - ',
 
-    // string The version of the css files
-    'document.css.version' => '1.0.0',
-
-    // string The version of the javascript files
-    'document.js.version' => '1.0.0',
-
 
     /*
     |--------------------------------------------------------------------------
@@ -127,17 +121,17 @@ return [
 
     // array Runs only the specified extensions in development mode, even if the development mode is not enabled
     'development.extensions' => [
-        // Set to true to run the languages extension in development mode
+        // Set to true to run the languages in development mode. If array, will run only the specified languages in development mode
         'languages' => false,
-        // Set to true to run the themes extension in development mode
+        // Set to true to run the themes in development mode. If array, will run only the specified themes in development mode
         'themes' => false,
-        // Set to true to run the plugins extension in development mode
+        // Set to true to run the plugins in development mode. If array, will run only the specified plugins in development mode
         'plugins' => false,
-        // Set to true to run the modules extension in development mode
+        // Set to true to run the modules in development mode. If array, will run only the specified modules in development mode
         'modules' => false,
-        // Set to true to run the css libraries extension in development mode
+        // Set to true to run the css libraries in development mode. If array, will run only the specified css libraries in development mode
         'libraries.css' => false,
-        // Set to true to run the javascript libraries extension in development mode
+        // Set to true to run the javascript libraries in development mode. If array, will run only the specified javascript libraries in development mode
         'libraries.js' => false,
     ],
 
@@ -146,6 +140,18 @@ return [
 
     // bool If true, will reload the routes on each request
     'development.routes' => false,
+
+    // If true, will not minify or combine the css assets
+    'development.assets.css' => false,
+
+    // If true, will not minify or combine the javascript assets
+    'development.assets.js' => false,
+
+    // If true, will regenerated the processed css assets on each request
+    'development.assets.process.css' => false,
+
+    // If true, will regenerated the processed javascript assets on each request
+    'development.assets.process.js' => false,
 
     // bool Set to true to display errors, false to hide them, if development mode is enabled
     'development.errors.display' => true,
@@ -214,6 +220,9 @@ return [
     // string|null The driver used for storage caching. Supported options: file, memcache. If null, will use cache.driver
     'cache.storage.driver' => null,
 
+    // The value - in hours - after which the cached storage data will expire
+    'cache.storage.expire_hours' => 48,
+
     // bool If true, will enable the page cache functionality
     'cache.page.enable' => false,
 
@@ -225,6 +234,42 @@ return [
 
     // bool If true will minify the cached content
     'cache.page.minify' => false,
+
+     // If true will exclude CSRF protected pages from page caching
+    'cache.page.exclude.csrf' => true,
+
+    // The urls to exclude from page caching
+    'cache.page.exclude.urls' => [],
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Assets Options
+    |--------------------------------------------------------------------------
+    */
+    // If true, will minify the css assets
+    'assets.css.minify.enable' => false,
+
+    // The css urls to exclude from minification
+    'assets.css.minify.exclude.urls' => [],
+
+    // If true, will combine the css assets
+    'assets.css.combine.enable' => false,
+
+    // The css urls to exclude from combination
+    'assets.css.combine.exclude.urls' => [],
+
+    // If true, will minify the js assets
+    'assets.js.minify.enable' => false,
+
+    // The js urls to exclude from minification
+    'assets.js.minify.exclude.urls' => [],
+
+    // If true, will combine the js assets
+    'assets.js.combine.enable' => false,
+
+    // The js urls to exclude from combination
+    'assets.js.combine.exclude.urls' => [],
 
 
     /*

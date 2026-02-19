@@ -7,11 +7,15 @@ $dirs_writeable = [
     'data/log',
     'data/tmp',
     'data/cache',
+    'data/cache/assets/css',
+    'data/cache/assets/js',
+    'data/cache/config',
     'data/cache/css',
     'data/cache/js',
     'data/cache/data',
     'data/cache/pages',
     'data/cache/routes',
+    'data/cache/storage',
     'data/cache/templates',
 ];
 
@@ -22,6 +26,22 @@ foreach ($dirs_writeable as $dir) {
         chmod($dir, 0777);
     }
 }
+
+
+//create symlinks for cache folders
+$symlinks = [
+    'data/cache/css' => 'public/assets/cache/css',
+    'data/cache/js' => 'public/assets/cache/js',
+];
+foreach ($symlinks as $target => $link) {
+    $target = $base_dir . '/' . $target;
+    $link = $base_dir . '/' . $link;
+
+    if (!is_dir($link)) {
+        symlink($target, $link);
+    }
+}
+
 
 //remove this file
 unlink(__FILE__);
