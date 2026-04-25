@@ -29,9 +29,11 @@ foreach ($dirs_writeable as $dir) {
 
 
 //create symlinks for cache folders
-$symlinks = [
+$symlinks = [    
+    'vendor/webdev1404/mars-framework/assets' => 'public/assets/framework',
+    'app/assets' => 'public/assets/app',
     'data/cache/css' => 'public/assets/cache/css',
-    'data/cache/js' => 'public/assets/cache/js',
+    'data/cache/js' => 'public/assets/cache/js'
 ];
 foreach ($symlinks as $target => $link) {
     $target = $base_dir . '/' . $target;

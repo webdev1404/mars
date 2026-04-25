@@ -45,18 +45,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Errors Options
-    |--------------------------------------------------------------------------
-    */
-    // bool Set to true to display errors, false to hide them
-    'errors.display' => false,
-
-    // int The error level to display
-    'errors.reporting' => E_ALL & ~E_NOTICE & ~E_DEPRECATED,
-
-
-    /*
-    |--------------------------------------------------------------------------
     | Themes Options
     |--------------------------------------------------------------------------
     */
@@ -94,70 +82,6 @@ return [
     */
     // bool Set to false to disable the plugins
     'plugins.enable' => true,
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Debug Options
-    |--------------------------------------------------------------------------
-    */
-    // bool Set to true to enable debug mode
-    'debug.enable' => false,
-
-    // bool Set to true to enable the db debug data
-    'debug.db' => false,
-
-    // string|array If specified, will enable debug only for the listed IPs. Works only if debug is false
-    'debug.ips' => [],
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Development Options
-    |--------------------------------------------------------------------------
-    */
-    // bool Set to true to enable development mode
-    'development.enable' => false,
-
-    // array Runs only the specified extensions in development mode, even if the development mode is not enabled
-    'development.extensions' => [
-        // Set to true to run the languages in development mode. If array, will run only the specified languages in development mode
-        'languages' => false,
-        // Set to true to run the themes in development mode. If array, will run only the specified themes in development mode
-        'themes' => false,
-        // Set to true to run the plugins in development mode. If array, will run only the specified plugins in development mode
-        'plugins' => false,
-        // Set to true to run the modules in development mode. If array, will run only the specified modules in development mode
-        'modules' => false,
-        // Set to true to run the css libraries in development mode. If array, will run only the specified css libraries in development mode
-        'libraries.css' => false,
-        // Set to true to run the javascript libraries in development mode. If array, will run only the specified javascript libraries in development mode
-        'libraries.js' => false,
-    ],
-
-    // string Will use this value as device, if specified. Valid values: 'desktop', 'tablet', 'smartphone'
-    'development.device' => '',
-
-    // bool If true, will reload the routes on each request
-    'development.routes' => false,
-
-    // If true, will not minify or combine the css assets
-    'development.assets.css' => false,
-
-    // If true, will not minify or combine the javascript assets
-    'development.assets.js' => false,
-
-    // If true, will regenerated the processed css assets on each request
-    'development.assets.process.css' => false,
-
-    // If true, will regenerated the processed javascript assets on each request
-    'development.assets.process.js' => false,
-
-    // bool Set to true to display errors, false to hide them, if development mode is enabled
-    'development.errors.display' => true,
-
-    // int The error level to display, if development mode is enabled
-    'development.errors.reporting' => E_ALL,
 
 
     /*
@@ -244,6 +168,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Crypt Options
+    |--------------------------------------------------------------------------
+    */
+    // string The crypt driver. Supported options: openssl, sodium
+    'crypt.driver' => 'openssl',
+
+    // array The secret keys used for encryption. The key in use is the last one in the list. Indexes must be strings. For sodium the key must be 32 chars long
+    'crypt.keys' => [],
+
+
+    /*
+    |--------------------------------------------------------------------------
     | Assets Options
     |--------------------------------------------------------------------------
     */
@@ -303,6 +239,27 @@ return [
 
     // string The smtp secure connection. Supported options: tls, ssl
     'mail.smtp.secure' => '',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Captcha Options
+    |--------------------------------------------------------------------------
+    */
+    // bool If true, will enable the captcha functionality
+    'captcha.enable' => false,
+
+    // string The captcha driver. Supported options: recaptcha2, recaptcha3
+    'captcha.driver' => 'recaptcha3',
+
+    // string The recaptcha site key
+    'captcha.recaptcha.site_key' => '',
+
+    // string The recaptcha secret key
+    'captcha.recaptcha.secret_key' => '',
+
+    // float The minimum score required to consider the captcha valid (recaptcha3 only)
+    'captcha.recaptcha.min_score' => 0.5,
 
 
     /*
@@ -454,27 +411,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Crypt Options
-    |--------------------------------------------------------------------------
-    */
-    // string The crypt driver. Supported options: openssl, sodium
-    'crypt.driver' => 'openssl',
-
-    // array The secret keys used for encryption. The key in use is the last one in the list. Indexes must be strings. For sodium the key must be 32 chars long
-    'crypt.keys' => [],
-
-
-    /*
-    |--------------------------------------------------------------------------
-    | Serializer Options
-    |--------------------------------------------------------------------------
-    */
-    // string The serializer driver. Supported options: php, json, igbinary
-    'serializer.driver' => 'php',
-
-
-    /*
-    |--------------------------------------------------------------------------
     | Throttle Options
     |--------------------------------------------------------------------------
     */
@@ -490,27 +426,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Captcha Options
-    |--------------------------------------------------------------------------
-    */
-    // bool If true, will enable the captcha functionality
-    'captcha.enable' => false,
-
-    // string The captcha driver. Supported options: recaptcha2, recaptcha3
-    'captcha.driver' => 'recaptcha3',
-
-    // string The recaptcha site key
-    'captcha.recaptcha.site_key' => '',
-
-    // string The recaptcha secret key
-    'captcha.recaptcha.secret_key' => '',
-
-    // float The minimum score required to consider the captcha valid (recaptcha3 only)
-    'captcha.recaptcha.min_score' => 0.5,
-
-
-    /*
-    |--------------------------------------------------------------------------
     | HTTP Accelerators Options
     |--------------------------------------------------------------------------
     */
@@ -519,6 +434,15 @@ return [
 
     // string The accelerator driver. Supported options: varnish
     'accelerator.driver' => 'varnish',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Serializer Options
+    |--------------------------------------------------------------------------
+    */
+    // string The serializer driver. Supported options: php, json, igbinary
+    'serializer.driver' => 'php',
 
 
     /*
