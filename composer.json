@@ -6,8 +6,9 @@
     "require": {
         "php": ">=8.5",
         "webdev1404/mars-framework": "dev-master",
+        "webdev1404/mars-bin": "dev-master",
         "webdev1404/mars-extensions": "dev-master",
-        "webdev1404/mars-bin": "dev-master"
+        "webdev1404/mars-libraries": "dev-master"
     },
     "autoload": {
         "psr-4": {
