@@ -17,5 +17,10 @@
     },
     "config": {
         "optimize-autoloader": true        
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "@php composer-scripts/post-create-project-cmd.php"
+        ]
     }
 }
