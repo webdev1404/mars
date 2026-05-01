@@ -46,11 +46,7 @@ return [
         // Set to true to run the plugins in development mode. If array, will run only the specified plugins in development mode
         'plugins' => false,
         // Set to true to run the modules in development mode. If array, will run only the specified modules in development mode
-        'modules' => false,
-        // Set to true to run the css libraries in development mode. If array, will run only the specified css libraries in development mode
-        'libraries.css' => false,
-        // Set to true to run the javascript libraries in development mode. If array, will run only the specified javascript libraries in development mode
-        'libraries.js' => false,
+        'modules' => false
     ],
 
     // string Will use this value as device, if specified. Valid values: 'desktop', 'tablet', 'smartphone'

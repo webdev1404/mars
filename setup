@@ -1,0 +1,7 @@
+#!/usr/bin/env php
+<?php
+define('MARS_SETUP', true);
+
+require __DIR__ . '/vendor/autoload.php';
+
+require __DIR__ . '/vendor/webdev1404/mars-framework/setup/setup.php';

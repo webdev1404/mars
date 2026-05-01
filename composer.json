@@ -6,9 +6,8 @@
     "require": {
         "php": ">=8.5",
         "webdev1404/mars-framework": "dev-master",
-        "webdev1404/mars-bin": "dev-master",
-        "webdev1404/mars-extensions": "dev-master",
-        "webdev1404/mars-libraries": "dev-master"
+        "webdev1404/mars-tools": "dev-master",
+        "webdev1404/mars-extensions": "dev-master"
     },
     "autoload": {
         "psr-4": {
@@ -16,11 +15,6 @@
         }
     },
     "config": {
-        "optimize-autoloader": true        
-    },
-    "scripts": {
-        "post-create-project-cmd": [
-            "@php composer-scripts/post-create-project-cmd.php"
-        ]
+        "optimize-autoloader": true
     }
 }
