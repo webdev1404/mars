@@ -1,7 +1,21 @@
 #!/usr/bin/env php
 <?php
+namespace Mars\Setup;
+
+use Mars\App;
+
 define('MARS_SETUP', true);
 
 require __DIR__ . '/vendor/autoload.php';
 
-require __DIR__ . '/vendor/webdev1404/mars-framework/setup/setup.php';
+try {
+    $app = App::obj();
+    if (!$app->is_cli) {
+        die("The setup script must be run as a CLI application\n");
+    }
+
+    $app->setup = new Setup($app);
+    $app->setup->run();
+} catch (\Exception $e) {
+    $app->cli->error("Error: " . $e->getMessage());
+}
