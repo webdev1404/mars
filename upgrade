@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php
+namespace Mars\Upgrade;
+
+use Mars\App;
+
+require __DIR__ . '/vendor/autoload.php';
+
+try {
+    $app = App::obj();
+    if (!$app->is_cli) {
+        die("The upgrade script must be run as a CLI application\n");
+    }
+
+    $app->upgrade = new Upgrade($app);
+    $app->upgrade->run();
+} catch (\Exception $e) {
+    $app->cli->error("Error: " . $e->getMessage());
+}

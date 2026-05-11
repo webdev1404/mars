@@ -141,26 +141,11 @@ return [
     // string The driver used for caching. Supported options: file, php, memcache. If memcache is used, memcache.enable must be true
     'cache.driver' => 'file',
 
-    // string|null The driver used for storage caching. Supported options: file, memcache. If null, will use cache.driver
-    'cache.storage.driver' => null,
-
-    // The value - in hours - after which the cached storage data will expire
-    'cache.storage.expire_hours' => 48,
-
     // bool If true, will enable the page cache functionality
     'cache.page.enable' => false,
 
-    // string The driver used for page caching. Supported options: file, memcache. If null, will use cache.driver
-    'cache.page.driver' => null,
-
-    // int The value - in hours - of the Expires header
-    'cache.page.expire_hours' => 24,
-
     // bool If true will minify the cached content
     'cache.page.minify' => false,
-
-     // If true will exclude CSRF protected pages from page caching
-    'cache.page.exclude.csrf' => true,
 
     // The urls to exclude from page caching
     'cache.page.exclude.urls' => [],

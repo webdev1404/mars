@@ -1,0 +1,4 @@
+#!/usr/bin/env php
+<?php
+
+require(__DIR__ . '/vendor/webdev1404/mars-tools/preload/preload.php');
