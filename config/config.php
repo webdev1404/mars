@@ -135,14 +135,11 @@ return [
     | Caching & Page Caching Options
     |--------------------------------------------------------------------------
     */
-    // string The driver used for caching. Supported options: file, php, memcache. If memcache is used, memcache.enable must be true
-    'cache.driver' => 'file',
+    // string The driver used for caching. Supported options: serialized, php, memcache. If memcache is used, memcache.enable must be true
+    'cache.driver' => 'serialized',
 
     // bool If true, will enable the page cache functionality
     'cache.page.enable' => false,
-
-    // bool If true will minify the cached content
-    'cache.page.minify' => false,
 
     // The urls to exclude from page caching
     'cache.page.exclude.urls' => [],
@@ -171,23 +168,11 @@ return [
     // The css urls to exclude from minification
     'assets.css.minify.exclude.urls' => [],
 
-    // If true, will combine the css assets
-    'assets.css.combine.enable' => false,
-
-    // The css urls to exclude from combination
-    'assets.css.combine.exclude.urls' => [],
-
     // If true, will minify the js assets
     'assets.js.minify.enable' => false,
 
     // The js urls to exclude from minification
     'assets.js.minify.exclude.urls' => [],
-
-    // If true, will combine the js assets
-    'assets.js.combine.enable' => false,
-
-    // The js urls to exclude from combination
-    'assets.js.combine.exclude.urls' => [],
 
 
     /*
@@ -258,61 +243,52 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | HTTP Response Options
+    | Headers Options
     |--------------------------------------------------------------------------
     */
     // array Additional headers to send with each HTTP response
-    'http.response.headers.list' => [
+    'headers.list' => [
         'X-Content-Type-Options' => 'nosniff',
         'X-Frame-Options' => 'SAMEORIGIN',
         'Referrer-Policy' => 'no-referrer-when-downgrade',
         //'Strict-Transport-Security' => 'max-age=31536000; includeSubDomains; preload',
     ],
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Content Security Policy Options
+    |--------------------------------------------------------------------------
+    */
     // bool If true, will enable the Content Security Policy header
-    'http.response.headers.csp.enable' => false,
+    'headers.csp.enable' => false,
     
     // bool If true, will use a nonce for the Content Security Policy header
-    'http.response.headers.csp.use_nonce' => false,
+    'headers.csp.use_nonce' => true,
 
-    // array The Content Security Policy header. If specified, will override the default values
-    'http.response.headers.csp.list' => [
-        'default-src' => "",
-        'script-src' => "",
-        'style-src' => "",
-        'font-src' => "",
-        'img-src' => "",
+    // bool If true, will allow the 'unsafe-inline' value for the script-src and style-src directives
+    'headers.csp.unsafe_inline' => false,
+
+    // array The Content Security Policy header. If specified, will override the default values and the values added by the application
+    'headers.csp.list' => [
+        //'default-src' => "",
+        //'script-src' => "",
+        //'style-src' => "",
+        //'font-src' => "",
+        //'img-src' => "",
     ],
 
 
     /*
     |--------------------------------------------------------------------------
-    | Hint Options
+    | 103 Early Hints Options
     |--------------------------------------------------------------------------
     */
-    // array The urls to preload
-    'hints.preload' => [
-        // The css urls to preload
-        'css' => [],
-        // The javascript urls to preload
-        'js' => [],
-        // The fonts urls to preload
-        'fonts' => [],
-        // The images urls to preload
-        'images' => []
-    ],
-
-    // array The urls to preconnect without the crossorigin attribute
-    'hints.preconnect.non_cors' => [],
-
-    // array The urls to preconnect using the crossorigin attribute
-    'hints.preconnect.cors' => [],
-
     // bool If true, will enable the Early Hints functionality
-    'hints.early_hints.enable' => false,
+    'headers.early_hints.enable' => false,
 
     // array The Early Hints headers
-    'hints.early_hints.list' => [
+    'headers.early_hints.list' => [
         'preload' => [
             // The styles to be sent as early hints
             'style' => [],
@@ -326,6 +302,26 @@ return [
         // The preconnect urls to be sent with the response
         'preconnect' => []
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Hints Options
+    |--------------------------------------------------------------------------
+    */
+    // array The urls to preload
+    'hints.preload' => [
+        // The css urls to preload
+        'style' => [],
+        // The javascript urls to preload
+        'script' => [],
+        // The fonts urls to preload
+        'font' => [],
+        // The images urls to preload
+        'image' => []
+    ],
+
+    // array The urls to preconnect to
+    'hints.preconnect' => [],
 
 
     /*
@@ -423,7 +419,7 @@ return [
     | Serializer Options
     |--------------------------------------------------------------------------
     */
-    // string The serializer driver. Supported options: php, json, igbinary
+    // string The serializer driver. Supported options: php, igbinary
     'serializer.driver' => 'php',
 
 
