@@ -11,9 +11,7 @@ $app = App::obj();
 try {
     require($base_path . '/app/boot.php');
 
-    $app->start();
-    $app->router->execute();
-    $app->end();
+    $app->run();
 
 } catch (\Error | \Exception | Exception $e) {
     $app->log->exception($e);
