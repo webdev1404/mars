@@ -28,7 +28,7 @@ return [
     // bool If true, will allow the 'unsafe-inline' value for the script-src and style-src directives
     'headers.csp.unsafe_inline' => false,
 
-    // array The Content Security Policy header. If specified, will override the default values and the values added by the application
+    // array The Content Security Policy header. If specified, will be added to the list of directives
     'headers.csp.list' => [
         //'default-src' => "",
         //'script-src' => "",

@@ -12,7 +12,6 @@ try {
     require($base_path . '/app/boot.php');
 
     $app->run();
-
 } catch (\Error | \Exception | Exception $e) {
     $app->log->exception($e);
 
