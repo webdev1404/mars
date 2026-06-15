@@ -12,4 +12,3 @@ return [
     // The trusted proxies from which we'll accept the HTTP_X_FORWARDED_FOR header
     'security.trusted_proxies' => [],
 ];
-

@@ -10,10 +10,10 @@ return [
     |--------------------------------------------------------------------------
     */
     // string The url of the site
-    'url.base' => '',
+    'site.url.base' => '',
 
     // string CDN url for static resources. If empty, the static resources will be served from the same domain
-    'url.cdn' => '',
+    'site.url.cdn' => '',
 
     // string The name of the site
     'site.name' => '',

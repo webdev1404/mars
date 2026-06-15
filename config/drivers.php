@@ -12,6 +12,7 @@ return [
         'accelerators' => [],
         'cacheable' => [],
         'captcha' => [],
+        'compression' => [],
         'crypt' => [],
         'db' => [],
         'device' => [],

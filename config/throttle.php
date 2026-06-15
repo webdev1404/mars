@@ -4,7 +4,7 @@
 | Throttle Options
 |--------------------------------------------------------------------------
 
-If enabled will allow you to throttle actions based on a key, such as an IP address or a user ID. 
+If enabled will allow you to throttle actions based on a key, such as an IP address or a user ID.
 This can be useful for preventing brute-force attacks, spamming, or other abusive behaviors.
 */
 

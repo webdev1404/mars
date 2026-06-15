@@ -10,7 +10,6 @@ return [
     'headers.list' => [
         'X-Content-Type-Options' => 'nosniff',
         'X-Frame-Options' => 'SAMEORIGIN',
-        'Referrer-Policy' => 'no-referrer-when-downgrade',
         //'Strict-Transport-Security' => 'max-age=31536000; includeSubDomains; preload',
     ],
 

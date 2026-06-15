@@ -18,4 +18,3 @@ return [
     // The js urls to exclude from minification
     'assets.js.minify.exclude.urls' => [],
 ];
-

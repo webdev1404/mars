@@ -10,8 +10,10 @@ $app = App::obj();
 
 try {
     require($base_path . '/app/boot.php');
+    $app->plugins->run('boot');
 
     $app->run();
+
 } catch (\Error | \Exception | Exception $e) {
     $app->log->exception($e);
 

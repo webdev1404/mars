@@ -1,5 +1,5 @@
 <?php
 
-$this->get('/', function() {
+$this->get('/', function () {
     return 'Hello, World!';
 });
