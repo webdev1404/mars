@@ -20,4 +20,3 @@ return [
     // int The number of items that should be displayed on each page
     'pagination.items_per_page' => 30,
 ];
-
