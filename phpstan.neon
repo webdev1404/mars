@@ -1,0 +1,9 @@
+parameters:
+    level: 0
+    paths:
+        - vendor/webdev1404/mars-framework
+        - vendor/webdev1404/mars-tools
+        - vendor/webdev1404/mars-extensions
+
+    excludePaths:
+        - vendor/webdev1404/mars-framework/tests/*
